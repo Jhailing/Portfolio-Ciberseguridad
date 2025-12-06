@@ -11,3 +11,12 @@ Este espacio está diseñado para mostrar mis conocimientos, mis comienzos en ci
 
 Mi objetivo es que cualquier persona que esté comenzando en esta área pueda entender paso a paso cómo realizo cada práctica.
 
+## Informes Técnicos (PDF)
+
+Aquí puedes ver mis informes completos, redactados como lo haría para un equipo de seguridad:
+
+- [Análisis de tráfico de red normal Vs. tráfico sospechoso (Wireshark básico)](./informes_pdf/analisis_dns.pdf)
+- [Wireshark – Captura y filtros básicos](./informes_pdf/wireshark_basico.pdf)
+- [Red Doméstica vs Entorno Aislado](./informes_pdf/red_domestica_vs_vm.pdf)
+
+

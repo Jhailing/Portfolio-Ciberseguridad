@@ -14,7 +14,7 @@ Para empezar a entender estos conceptos de una forma gráfica, si vamos a analiz
 
 ### Ventajas de analizar el tráfico desde tu red doméstica
 
-- Ves cómo se comporta el tráfico real: qué hacen las apps, cómo se comunican los dispositivos, qué es “normal”.
+- Capturás todo el tráfico real que pasa por tu PC y verás su comportamiento: qué hacen las apps, cómo se comunican los dispositivos, qué es “normal”.
 
 - Es ideal para aprender patrones comunes y entender cómo se comunican los servicios. Recomendable que sean casos básicos y educativos.
 
@@ -29,6 +29,7 @@ Para empezar a entender estos conceptos de una forma gráfica, si vamos a analiz
 - Ves el tráfico real de tus dispositivos, por lo que debes tener cuidado de compartir o hacer capturas porque puedes mostrar datos privados, como direcciones IP de tu casa, nombres de sitios visitados por ti o tus familiares, etc.
 
 - Por estar en la “vida real” estás expuesto, no hagas pruebas peligrosas en la red doméstica, no descargues malware ni lances escaneos agresivos desde tu casa, porque puedes afectar a tus equipos o meterte en problemas con tu proveedor de Internet. Tu red doméstica no es el mejor lugar para ejecutar herramientas ofensivas.
+- Es un ambiente “ruidoso” y puede confundir a principiantes.
 ***
 ### Entorno Aislado
 
