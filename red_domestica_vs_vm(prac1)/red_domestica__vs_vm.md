@@ -20,7 +20,7 @@ Para empezar a entender estos conceptos de una forma gráfica, si vamos a analiz
 
 - No requiere configuración especial
 
-- Wireshare funciona con cualquiera de las interfaces
+- Wireshark funciona con cualquiera de las interfaces
 
 - Está bueno para practicar filtrado, análisis básico y observar el tráfico “normal” de una red doméstica.
 
