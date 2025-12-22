@@ -1,5 +1,5 @@
+<!-- Realizado por Jhailing Ramos, Analista en Ciberseguridad -->
 # Análisis de tráfico de red normal Vs. tráfico sospechoso (Wireshark básico)
-
 
 ## Objetivo:
 En esta práctica analizo cómo funciona el tráfico DNS usando Wireshark, una de las herramientas más importantes en el mundo de la ciberseguridad.
@@ -85,3 +85,4 @@ De acuerdo con lo visto, concluyo con lo siguiente:
 4. La VM brinda un entorno seguro y controlado para practicar sin miedo.
 
 *Visita el informe de esta práctica si quieres ver la información más detallada. Nos vemos en la siguiente práctica..*
+<!-- Realizado por Jhailing Ramos, Analista en Ciberseguridad -->
