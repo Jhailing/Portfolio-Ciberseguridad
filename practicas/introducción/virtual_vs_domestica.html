@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Red Doméstica vs Entorno Aislado</title>
+  <link rel="stylesheet" href="../../assets/css/introduccion.css">
+  <link rel="shortcut icon" href="../../images/introduccion/ciberseguridad (1).png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;500&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body>
+    <main class="container practice-container">
+    <!-- front page -->
+        <section class="practice-hero fade-in">
+            <!-- Return to main page -->
+            <a href="../../index.html" class="practice-badge">
+            Volver al portfolio >
+            </a>
+            <span class="practice-badge">Práctica 01</span>
+            <!-- main title and first paragraph -->
+            <h1>¿Red Doméstica o Entorno Aislado (VM)?</h1>
+            <p class="practice-intro">
+                Una de las primeras dudas al comenzar en ciberseguridad es
+                <strong>dónde y cómo analizar el tráfico de red</strong>.
+                En esta práctica comparo ambos entornos, sus ventajas, riesgos y cuándo conviene usar cada uno.
+            </p>
+        </section>
+
+    <!-- OBJETIVES -->
+        <section class="section-card fade-in">
+            <h2 class="section-title">Objetivos</h2>
+            <ul class="objectives-list">
+                <li>Comprender los dos entornos de análisis</li>
+                <li>Identificar ventajas y desventajas de cada uno</li>
+                <li>Aplicar buenas prácticas desde el inicio</li>
+            </ul>
+        </section>
+
+    <!-- GENERAL ANALYSIS -->
+        <section class="section-card fade-in split-section">
+            <div class="text-block">
+                <h2 class="section-title"> Análisis General</h2>
+                <p>
+                    Esta duda es muy común cuando estamos empezando, ¿porqué es conveniente usar una VM? o ¿se puede usar una red doméstica para analizar tráfico? En etapas iniciales suele existir confusión sobre el alcance real de una máquina virtual: para qué sirve, que riesgos mitiga y en qué situaciones es realmente necesaria. A esto se le suma, en muchos casos, una limitación de recursos del equipo físico, como almacenamiento o rendimiento, que puede hacer que el trabajo dentro de una VM resulte lento o frustrante.
+                </p>
+                <!-- CENTERED IMAGE -->
+                <figure class="analysis-figure">
+                    <img src="../../images/introduccion/comparativo_v.png" alt="Comparación red doméstica vs VM">
+                    <figcaption>
+                        Comparación visual entre análisis de tráfico en red doméstica y entorno aislado (VM)
+                    </figcaption>
+                </figure>
+
+                <p>
+                    En mi caso particular, estas limitaciones están presentes, pero aun así decidí priorizar las <strong>buenas prácticas</strong>.
+                </p>
+                <div class="analysis-text">
+                    <p> Este análisis no busca definir un entorno como “mejor” de forma absoluta, sino comprender <strong>qué tipo de información ofrece cada uno</strong>, qué riesgos implica y en qué contextos conviene utilizar una red doméstica o un entorno aislado. Este criterio será fundamental en prácticas más avanzadas, donde la exposición y el control del entorno se vuelven críticos.</p>
+                    <blockquote class="bq">
+                        “Entender y respetar los entornos de trabajo desde el inicio ayuda a construir una base sólida, incluso si el proceso requiere más tiempo o ajustes técnicos”
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+    <!-- DOMESTIC NETWORK -->
+        <section class="section-card fade-in">
+            <h2 class="section-title">Red Doméstica</h2>
+            <p class="highlight-box">
+                Para empezar a entender estos conceptos de una forma gráfica, imaginemos la red de tu casa como una calle y el router como la esquina donde convergen todos los dispositivos.
+            </p>
+
+            <p>
+                PC, celular, TV y otros equipos envían y reciben información (datos) constantemente.
+                Como analista, observas desde esa esquina (el router) cómo circulan los datos, quien entra y sale de las casas, como tu tlf envía mensajes a Instagram, como tu TV le pide un video a YouTube y como tu PC busca una tarea en Google.
+                <strong>Wireshark</strong> sería como una cámara con lupa que te permite ver qué tipo de “cartas” circulan: si es un pedido de una página web (HTTP/HTTPS), una consulta de nombres (DNS), o algo más técnico (TCP, UDP).
+            </p>
+        </section>
+
+    <!-- ADVANTAGES / DISADVANTAGES OF A HOME NETWORK -->
+        <section class="section-card fade-in grid-2">
+            <div>
+                <h3 class="sub-title good">Ventajas</h3>
+                <ul class="objectives-list">
+                    <li><strong>Capturás todo el tráfico real que pasa por tu PC</strong> y ves su comportamiento: qué hacen las apps, cómo se comunican los dispositivos, qué es “normal”</li>
+                    <li><strong>Ideal para aprender patrones comunes</strong> y entender cómo se comunican los servicios.Recomendable que sean casos básicos y educativos.</li>
+                    <li>No requiere configuración especial</li>
+                    <li>Perfecto para análisis y filtrado básico</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="sub-title bad">Desventajas</h3>
+                <ul class="objectives-list-red">
+                    <li><strong>Riesgo de exponer datos personales</strong>, ves el tráfico real de tus dispositivos, por lo que debes tener cuidado de compartir o hacer capturas porque puedes mostrar datos privados, como direcciones IP de tu casa, nombres de sitios visitados por ti o tus familiares</li>
+                    <li><strong>No es segura para pruebas ofensivas</strong>, por estar en la “vida real” estás expuesto, no hagas pruebas peligrosas en la red doméstica, no descargues malware ni lances escaneos agresivos desde tu casa, porque puedes afectar a tus equipos o meterte en problemas con tu proveedor de Internet.</li>
+                    <li>Entorno ruidoso para principiantes</li>
+                </ul>
+            </div>
+        </section>  
+    <!-- ISOLATED ENVIRONMENT -->
+        <section class="section-card fade-in split-section">
+            <div class="text-block">
+                <h2 class="section-title">Entorno Aislado (VM)</h2>
+                <p class="highlight-box">
+                    Si analizas desde un entorno aislado, en lugar de mirar toda la calle desde la esquina, te inventas un <strong>mini barrio virtual</strong> dentro tu cuarto como si fuera una maqueta y observas esa interacción. 
+                </p>  
+
+                <p>
+                    En esa interacción solo están tu y tus pruebas, todo el tráfico es generado por vos: sistemas operativos, navegación, pruebas y scripts.. <strong>Wireshark</strong> va a ver solo lo que ocurre dentro de ese mundo.
+                </p>
+                <!-- VIRTUAL MACHINE -->
+                <h3 class="section-title">Pero.. ¿Qué es una máquina virtual?</h3>
+                <p>
+                    Es una computadora virtualizada dentro de otra física, que permite crear entornos aislados y seguros para estudiar tráfico de red, vulnerabilidades y ejecutar pruebas sin riesgos.
+                </p>
+            </div>
+        </section>
+
+    <!-- ADVANTAGES / DISADVANTAGES OF A VM -->
+        <section class="section-card fade-in grid-2">
+            <div>
+                <h3 class="sub-title good">Ventajas VM</h3>
+                <ul class="objectives-list">
+                    <li><strong>Entorno controlado y seguro</strong>, puedes probar simulaciones de ataques, abrir archivos sospechosos, ejecutar scripts y no estás poniendo en riesgo tus equipos.</li>
+                    <li>Ideal para laboratorios de malware y tráfico malicioso</li>
+                    <li><strong>Snapshots para restaurar estados</strong>, cada práctica puede tener su snapshot o punto de restauración, es decir, el snapshot es como una foto que tomas de toda tu maquina virtual en un momento exacto, S.O, programas abiertos, configuración, etc, si te equivocas o algo sale mal, puedes restaurar el snapshot y la VM queda como al principio cuando sacaste la foto.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="sub-title bad">Desventajas VM</h3>
+                <ul class="objectives-list-red">
+                    <li><strong>Tráfico limitado</strong>, si no generas tráfico activamente, la VM estará “vacía”, es decir, no hay navegación, DNS, ni comportamiento real a menos que lo provoques.</li>
+                    <li>Menos “realismo” sin interacción</li>
+                </ul>
+            </div>
+        </section>
+        <!-- NETWORK CONFIGURATION -->
+        <section class="section-card fade-in">
+            <h2 class="section-title">Configuración de Red en la VM</h2>
+            <ul class="network-modes objectives-list">
+            <li><strong>NAT:</strong> conexión simple, poco tráfico visible</li>
+                <li><strong>Bridged:</strong> comportamiento más realista, ya que la VM se comporta como otro dispositivo en la red</li>
+                <li><strong>Host-only:</strong> entorno cerrado y seguro, porque la conexión será solo entre VM y tu PC</li>
+            </ul>
+        </section>
+    <!-- CLOSING -->
+        <section class="section-card fade-in conclusion">
+            <p>
+                Gracias por llegar hasta aquí.
+                Estos conceptos son fundamentales para no confundirnos más adelante.
+            </p>
+
+            <p>
+                En el próximo artículo comenzamos con la práctica: <strong>Análisis de Tráfico DNS con Wireshark (Básico)</strong>.
+            </p>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="https://x.com/home" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/Jhailing/Portfolio-Ciberseguridad" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jhailing-ramos/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://mail.google.com/mail/u/0/#inbox" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-text">
+                <p>
+                    Portfolio técnico en Ciberseguridad ·<span> Creado con propósito</span>
+                </p>
+                <p class="footer-sign">
+                © 2026 · Jhailing Ramos
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../../js/main.js"></script>
+</body>
+</html>

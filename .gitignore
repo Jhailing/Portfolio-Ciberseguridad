@@ -1,0 +1,11 @@
+# Editor
+.vscode/
+
+# Sistema
+.DS_Store
+
+# Variables sensibles
+.env
+
+# Dependencias (por si luego usas JS más avanzado)
+node_modules/

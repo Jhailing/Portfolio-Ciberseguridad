@@ -1,0 +1,394 @@
+/* ===============================
+   VARIABLES GLOBALES
+================================ */
+:root {
+    --bg-color: #0a0b10;
+    --card-bg: #11141d;
+    --accent-color: #00ff41; /* Verde Terminal */
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --border-color: #1f2433;
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+/* ===============================
+  BASE
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===============================
+  HEADER
+================================ */  
+.main-header {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+    background-image: url('/images/introduccion/Banner_ciber.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/*Contenedor del header*/
+.container {
+    max-width: 900px;
+    padding: 0 20px;
+   justify-content: center;
+    margin: 0 auto;
+}
+
+.card_id {
+    width: 500px;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0;
+    transition: transform 0.3s ease;
+    opacity: 0.85;
+    margin-left: 12%;
+}
+
+/* Titulo del header*/
+.glitch {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #e6e6e6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Navegación header */
+.nav-links {
+    margin-top: 15px;
+    position: relative;
+}
+
+.list_nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.list_intro a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: 500;    
+}
+/* ===============================
+  CONTAINER, TITLE AND IMAGE PRESENTATION
+================================ */
+.container_title_image {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+/*Imagen programador*/
+.img_programador {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+/* ===============================
+  SECTIONS
+================================ */
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px;
+    margin: 40px 0;
+    transition: transform 0.3s ease;
+    max-width: 900px;
+}
+
+.section-card:hover {
+    border-color: var(--accent-color);
+}
+
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+/* ===============================
+  CONTENT STYLES
+================================ */
+.text-content {
+    font-size: 1rem;
+    line-height: 1.7;          
+    color: #d1d5db;            
+    max-width: 70ch;           
+    margin-bottom: 1.2rem;
+}
+.text-high {
+ font-size: 1.1rem;
+  color: #f9fafb;
+  font-weight: 400;
+}
+.knowledges {
+    display: flex;
+    text-align: center;
+}
+ 
+/* ===============================
+   REPORTS SECTION
+================================ */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.report-card {
+  background: rgba(15, 25, 35, 0.65);
+  border: 1px solid rgba(0, 255, 180, 0.25);
+  border-radius: 14px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 255, 180, 0.25);
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.report-id {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.report-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.report-tools {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.report-btn {
+  margin-top: auto;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent-soft);
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.report-btn:hover {
+  background: rgba(0, 255, 180, 0.12);
+  box-shadow: 0 0 10px rgba(0, 255, 180, 0.35);
+}
+
+/* ===============================
+   CONCLUSION
+================================ */
+.conclusion {
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(0, 255, 180, 0.08),
+    rgba(0, 255, 180, 0.02)
+  );
+}
+
+/* ===============================
+    FOOTER
+================================ */
+.contact {
+  font-size: 1.2rem;
+  color: #00ffb4;
+  margin-bottom: 1.2rem;
+}
+.site-footer {
+  margin-top: 6rem;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(
+    to top,
+    #0a0f1f,
+    #0f1b2d
+  );
+  border-top: 1px solid rgba(0, 255, 180, 0.15);
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #00ffb4;
+  border: 1px solid rgba(0, 255, 180, 0.35);
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: rgba(0, 255, 180, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 180, 0.6);
+  transform: translateY(-3px);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #b8c4d6;
+  line-height: 1.5;
+}
+
+.footer-text span {
+  color: #00ffb4;
+}
+
+.footer-sign {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #7f8fa6;
+}
+/* ===============================
+    ANIMATIONS
+================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ===============================
+    GRID PRACTICES
+================================ */
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.practice-card {
+  background: rgba(10, 15, 25, 0.85);
+  border: 1px solid rgba(0, 255, 150, 0.15);
+  border-radius: 14px;
+  padding: 1.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.practice-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.25);
+}
+
+.practice-number {
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.practice-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.practice-tools {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 0.8rem;
+}
+
+.practice-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.practice-level {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+}
+/* ===============================
+    ANIMATIONS IN JS
+================================ */
+.practice-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.practice-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
