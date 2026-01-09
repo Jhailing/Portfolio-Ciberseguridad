@@ -1,0 +1,303 @@
+/* ===============================
+   VARIABLES GLOBALES
+================================ */
+:root {
+    --bg-color: #0a0b10;
+    --card-bg: #11141d;
+    --accent-color: #00ff41; /* Verde Terminal */
+    --text-main: #e0e0e0;
+    --text-dim: #a0a0a0;
+    --border-color: #1f2433;
+    /* --font-main: 'Inter', sans-serif; */
+    /* --font-mono: 'Fira Code', monospace; */
+  --bg-main: #0b0f1a;
+  --bg-card: rgba(15, 22, 36, 0.85);
+  --border-soft: rgba(0, 255, 180, 0.15);
+  --border-color: #1f2433;
+
+  --text-soft: #b6c2d9;
+ 
+  --accent: #00ffb4;
+  --accent-soft: rgba(0, 255, 180, 0.2);
+  --danger: #ff4d6d;
+
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+/* ===============================
+  BASE
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #121a2f, var(--bg-main));
+  color: var(--text-main);
+  font-family: var(--font-main);
+  line-height: 1.7;
+}
+/* ===============================
+   HEADER
+================================ */
+ .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.practice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+
+/* ===============================
+   TITLE
+================================ */
+.practice-hero {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.practice-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.practice-hero h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: 1.2rem;
+}
+
+.practice-intro {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+
+/* Secciones */
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px;
+    margin: 40px 0;
+    transition: transform 0.3s ease;
+    max-width: 900px;
+}
+
+.section-card:hover {
+    border-color: var(--accent-color);
+}
+
+.custom-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.custom-list li::before {
+    content: "> ";
+    color: var(--accent-color);
+    font-family: var(--font-mono);
+}
+
+.tool-tag {
+    display: inline-block;
+    background: #1a1f2e;
+    color: var(--accent-color);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    margin: 5px;
+    border: 1px solid var(--accent-color);
+}
+
+.text-content {
+    font-size: 1rem;
+    line-height: 1.7;          
+    color: #d1d5db;            
+    max-width: 70ch;           
+    margin-bottom: 1.2rem;
+}
+/* Galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.image-placeholder {
+    background: #050505;
+    border: 1px dashed var(--text-dim);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+
+.image-placeholder:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+/* ===============================
+    FOOTER
+================================ */
+.site-footer {
+  margin-top: 6rem;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(
+    to top,
+    #0a0f1f,
+    #0f1b2d
+  );
+  border-top: 1px solid rgba(0, 255, 180, 0.15);
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+.footer-social a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #00ffb4;
+  border: 1px solid rgba(0, 255, 180, 0.35);
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: rgba(0, 255, 180, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 180, 0.6);
+  transform: translateY(-3px);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #b8c4d6;
+  line-height: 1.5;
+}
+
+.footer-text span {
+  color: #00ffb4;
+}
+
+.footer-sign {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #7f8fa6;
+}
+/* ===============================
+   ANIMATIONS
+================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 600px) {
+  .section-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .practice-hero h1 {
+    font-size: 1.8rem;
+  }
+  .gallery-container { grid-template-columns: 1fr; }
+}
+/* Galería */
+/* Botones */
+/* .btn-primary {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-color);
+} */
+
+/* otro tema  */
+/* seccion mis proyectos
+.section2{
+    margin-top: 100px;
+}
+.four-part{
+    width: 100%;
+    height: 600px;
+    background-color: #2d7e8c;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
+.comilla{
+    width: 89px;
+    height: 75px;
+    margin-top: 10px;
+    display: flex;
+}
+.parrafo{
+    width: 800px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.someone{
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+} */
