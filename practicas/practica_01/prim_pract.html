@@ -17,29 +17,56 @@
             <a href="../../index.html" class="practice-badge">
             Volver al portfolio >
             </a>
+            <!-- TITULO DE LA PRACTICA Y PARRAFO INTRODUCTORIO -->
             <span class="practice-badge">Práctica 02</span>
-            <!-- main title and first paragraph -->
             <h1>Análisis de Tráfico DNS con Wireshark (Básico)</h1>
             <p class="practice-intro">
                 En esta práctica empezamos a usar Wireshare como herramienta para evaluar el tráfico de red. Ampliamos nuestros conocimientos sobre el protocolo DNS y aprendemos a identificar patrones de tráfico sospechoso, como respuestas NXDOMAIN que pueden indicar actividad maliciosa.
             </p>
         </section>
-
+<!-- SECCION DE LA PRACTICA -->
         <section id="practica-1" class="section-card fade-in">
-            <div class="badge">Prácticas</div>
+            <div class="practice-intro">Práctica</div>
             <h2 class="section-title">01. Análisis de Tráfico DNS con Wireshark (Básico)</h2>
-            
-            <div class="lab-grid">
-                <div class="lab-info">
+            <!-- RESUMEN EJECUTIVO -->
+            <div class="executive-summary">
+                <div class="summary-header report-header">
+                    <span class="status-tag success">Estado: Completado</span>
+                    <span >Fecha: 22/11/2025</span>
+                </div>
+                <h2>Resumen Ejecutivo</h2>
+                <p>
+                    Se realizó una auditoría de tráfico sobre el protocolo <strong>DNS</strong> en un entorno controlado (VM Windows 10) durante 60 minutos. El objetivo fue establecer una línea base de comportamiento y detectar posibles anomalías en la resolución de nombres. 
+                </p>
+                <div class="summary-grid">
+                    <div class="summary-stat">
+                        <span class="stat-value">159,209</span>
+                        <span class="stat-label">Consultas Analizadas</span>
+                    </div>
+                    <div>
+                        <span class="stat-value">RCODE 3</span>
+                        <span class="stat-label">Filtro de Error Crítico</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Amenazas Detectadas</span>
+                    </div>
+                </div>
+            </div>
+            <hr class="separator">
+            <!-- OBJETIVOS -->
+            <div>
+                <div>
                     <h3>Objetivos de la práctica</h3>
-                    <ul class="custom-list">
+                    <ul class="custom-list practice-intro">
                         <li>Identificar patrones de tráfico DNS normal vs sospechoso.</li>
                         <li>Analizar respuestas NXDOMAIN y su relación con malware (DGA).</li>
                         <li>Dominar filtros avanzados de Wireshark para investigación de incidentes.</li>
                     </ul>
                 </div>
-
-                <div class="lab-tools">
+        
+            <!-- HERRAMIENTAS UTILIZADAS -->
+                <div>
                     <h3>Herramientas Utilizadas</h3>
                     <div class="tools-wrapper">
                         <span class="tool-tag">Wireshark</span>
@@ -49,40 +76,165 @@
                     </div>
                 </div>
             </div>
-
-            <hr class="separator">
-
+        </section>  
+        <!-- SECCION PRACTICA -->
+        <section id="practica-dns" class="section-card fade-in">
+            <div>Análisis de Protocolos</div>
+            <h2 class="section-title">Análisis de Tráfico DNS y Detección de Anomalías (NXDOMAIN)</h2>
+            <div>
+                <div>
+                    <h3>Resumen del Incidente Simulado</h3>
+                    <p class="text-content">
+                        Investigación de comportamientos anómalos en la resolución de nombres. Se analizó el tráfico generado tras el arranque del sistema y se simularon consultas a dominios inexistentes para identificar firmas de error en Wireshark.
+                    </p>
+                    <ul class="custom-list">
+                        <li>Identificación de <strong>Reply Code: 3 (Name Error)</strong>.</li>
+                        <li>Filtrado de tráfico mediante <code>dns.flags.rcode != 0</code>.</li>
+                        <li>Diferenciación de tráfico legítimo (boot-up) vs. sintético.</li>
+                    </ul>
+                </div>
+            </div>
             <div class="procedure">
                 <h3>Procedimiento Técnico</h3>
                 <p class="text-content">
                     Iniciamos la captura en un entorno controlado (VM) para aislar el tráfico. Se ejecutaron consultas <code>nslookup</code> a dominios inexistentes para forzar respuestas de error y observar cómo las herramientas de monitoreo las catalogan.
                 </p>
-                
+                <!-- IMAGEN 1 -->
                 <div class="gallery-container">
-                    <div class="image-placeholder" onclick="toggleImage(this)">
-                        <p>[ Click para expandir Captura: Filtro dns.flags.rcode != 0 ]</p>
-                        </div>
-                    <div class="image-placeholder" onclick="toggleImage(this)">
-                        <p>[ Click para expandir Captura: Análisis de Jerarquía de Protocolos ]</p>
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/img1_vsc.png" alt="Captura Wireshark Inicio">
+                        <p class="img-caption"><strong>Figura 1:</strong> Saturación inicial de red por servicios del sistema.</p>
+                    </div>
+                <!-- IMAGEN 2 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/consulta_dns_2vsc.png" alt="Filtro NXDOMAIN">
+                        <p class="img-caption"><strong>Figura 2:</strong> Identificación de registros No Such Name.</p>
+                    </div>
+                    <!-- IMAGEN 3 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/minutos_despues_3vsc.png" alt="Captura DNS despues de 10 minutos">
+                        <p class="img-caption"><strong>Figura 3:</strong> Captura DNS 10 minutos después de la primera captura iniciar el sistema</p>
+                    </div>
+                      <!-- IMAGEN 4 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/pagina_no_existe_4vsc.png" alt="Captura DNS despues de generar">
+                        <p class="img-caption"><strong>Figura 4:</strong> Captura DNS después de generar un dominio erróneo para observar el tráfico de red</p>
+                    </div>
+                     <!-- IMAGEN 5 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/captura_no_existe_2_7vsc.png" alt="Captura filtro: dns.qry.type == 1">
+                        <p class="img-caption"><strong>Figura 5:</strong> Captura filtro: dns.qry.type == 1 después de generar un dominio erróneo para observar el tráfico de red</p>
+                    </div>
+                    <!-- IMAGEN 6 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/captura_no_existe_3_8vsc.png" alt="Captura filtro: dns.qry.type == 28">
+                        <p class="img-caption"><strong>Figura 6:</strong> Captura filtro: dns.qry.type == 28 después de generar un dominio erróneo para observar el tráfico de red</p>
+                    </div>
+                    <!-- IMAGEN 7 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/captura_no_existe_4_9vsc.png" alt="Captura filtro: dns.qry.type == 5">
+                        <p class="img-caption"><strong>Figura 7:</strong> Captura filtro: dns.qry.type == 5 después de generar un dominio erróneo para observar el tráfico de red</p>
+                    </div>
+                    <!-- IMAGEN 8 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/filtro1_5vsc.png" alt="Captura filtro: dns.qry.type == 0">
+                        <p class="img-caption"><strong>Figura 8:</strong> Captura filtro: dns.flags.rcode !=0  después de generar un dominio erróneo para observar el tráfico de red</p>
+                    </div>
+                    <!-- IMAGEN 9 -->
+                    <div onclick="toggleImage(this)">
+                        <img class="image-placeholder" src="../../images/practica_01/statistics_10vsc.png" alt="Tráfico capturado a través Statistics → Protocol Hierarchy">
+                        <p class="img-caption"><strong>Figura 9:</strong> Tráfico capturado a través Statistics → Protocol Hierarchy</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="report-download">
-                <p>¿Necesitas el detalle profundo? 
-                Aquí puedes ver mis informes completos, redactados como lo haría para un equipo de seguridad:</p>
-                <a href="informes/practica1.pdf" class="btn-primary" target="_blank" id="pdf-btn">Descargar Informe Técnico (PDF)</a>
+        <section id="practica-1" class="section-card fade-in">
+            <!-- SECCION OBSERVACIONES -->
+            <div class="observations-section">
+                <h3 class="section-title">Observaciones Técnicas del Laboratorio</h3>
+                <ul class="observation-list">
+                    <li>
+                        <strong>Detección de Anomalías mediante RCODE:</strong> 
+                        Utilizando el filtro <code>dns.flags.rcode != 0</code>, se identificaron con precisión los intentos de resolución fallidos. Esta técnica es fundamental en un entorno real para detectar <strong>Domain Generation Algorithms (DGA)</strong> usados por malware.
+                    </li>
+                    <li>
+                        <strong>Establecimiento de Línea Base (Baseline):</strong> 
+                        Se observó un flujo constante de consultas hacia dominios de telemetría de Microsoft (visto en la Figura 1). Identificar este tráfico "normal" es crucial para reducir falsos positivos durante el monitoreo de seguridad.
+                    </li>
+                    <li>
+                        <strong>Análisis de Registros CNAME:</strong> 
+                        La alta presencia de registros CNAME confirma el uso de CDNs y servicios en la nube. Desde una perspectiva de seguridad, esto requiere supervisión para evitar ataques de <strong>Subdomain Takeover</strong>
+                    </li>
+                    <li>
+                        <strong>Validación de Entorno Aislado:</strong> 
+                        La jerarquía de protocolos (100% UDP/DNS) confirma que la Máquina Virtual operó en un entorno NAT correctamente configurado, sin interferencias de protocolos ruidosos de la red local.
+                    </li>
+                    <li>
+                        <strong>0.3% NXDOMAIN:</strong> 
+                        El 0.3% de errores detectados (NXDOMAIN) fue analizado y se determinó que corresponden a pruebas controladas de resolución, descartando actividad de comando y control (C2) maliciosa.
+                    </li>
+                    <li>
+                        <strong>Resolución Dual-Stack:</strong> 
+                        Se documentó un equilibrio entre consultas Tipo A (IPv4) y Tipo AAAA (IPv6), lo que refleja un comportamiento estándar de sistemas modernos intentando conectividad global.
+                    </li>
+                </ul>
             </div>
-
-            <div class="conclusions">
-                <h3>Conclusiones y Aprendizaje</h3>
-                <blockquote class="cyber-quote">
-                    "La visibilidad es la primera línea de defensa. Comprender que un simple error NXDOMAIN puede ser la huella de un troyano intentando comunicarse con su C2 es vital para cualquier analista SOC."
-                </blockquote>
+            <hr class="separator">
+            <div class="report-download">
+                <p class="report-paragraft"><em>¿Necesitas el detalle profundo? 
+                Aquí puedes ver el informe completo, redactado como lo haría para un equipo de seguridad o en la sección e informes también los puedes encontrar:</em></p>
+                <!-- BTN-REPORT -->
+                <a href="../practica_01/Informe Análisis de Tráfico DNS en Entorno Aislado (Máquina Virtual).pdf" class="report-btn" target="_blank" id="pdf-btn">Descargar Informe Técnico (PDF)</a>
+                
+                <a href="../practica_01/Informe_1P_trafico_DNS.pdf" class="report-btn" target="_blank" id="pdf-btn">Descargar Informe Ejecutivo (PDF)</a>
             </div>
         </section>
+        <!-- <hr class="separator"> -->
+        <section id="practica-1" class="section-card fade-in"">
+            <div>
+                <h3 class="section-title">Conclusiones y Aprendizaje</h3>
+                <div class="action-plan">
+                    <h3 class="action-plan">Plan de Respuesta y Recomendaciones</h3>
+                    <p>Basado en los hallazgos, se proponen las siguientes acciones para el equipo de seguridad e infraestructura:</p>
+                    <div>
+                        <table class="tech-table">
+                            <thead>
+                                <tr>
+                                    <th>Evento Detectado</th>
+                                    <th>Acción Recomendada</th>
+                                    <th>Responsable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tráfico de telemetría excesivo</td>
+                                    <td>Aplicar Políticas de Grupo (GPO) para endurecimiento (Hardening) del SO.</td>
+                                    <td>SysAdmin</td>
+                                </tr>
+                                <tr>
+                                    <td>Errores RCODE 3 controlados</td>
+                                    <td>Configurar umbrales de alerta en el SIEM para detectar escaneos DNS.</td>
+                                    <td>SOC Analyst (L2)</td>
+                                </tr>
+                                <tr>
+                                    <td>Uso de DNS en texto claro</td>
+                                    <td>Implementar DNS over HTTPS (DoH) para evitar interceptación.</td>
+                                    <td>Seguridad de Red</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>     
+        </section>
+    <!-- </section> -->
+        <article>
+            <blockquote class="cyber-quote">
+                "La visibilidad es la primera línea de defensa. Comprender que un simple error NXDOMAIN puede ser la huella de un troyano intentando comunicarse con su C2 es vital para cualquier analista SOC."
+            </blockquote>
+        </article>
     </main>
-
      <!-- FOOTER -->
     <footer id="contacto" class="site-footer">
         <div class="footer-content">
@@ -104,5 +256,11 @@
             </div>
         </div>
     </footer>
-
-    </body>
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgFull">
+        <div id="modal-caption"></div>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
