@@ -49,16 +49,11 @@ body {
   flex-direction: column;
   gap: 3.5rem;
 }
-
-/* ===============================
-   TITLE
-================================ */
 .practice-hero {
   text-align: center;
   max-width: 900px;
   margin: auto;
 }
-
 .practice-badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -68,19 +63,16 @@ body {
   margin-bottom: 1rem;
   text-decoration: none;
 }
-
 .practice-hero h1 {
   font-size: clamp(2rem, 3vw, 2.6rem);
   margin-bottom: 1.2rem;
 }
-
 .practice-intro {
   color: var(--text-soft);
   font-size: 1.05rem;
 }
-
 /* ===============================
-   SECTIONS - OBJECTIVES
+  OBJECTIVES
 ================================ */
 .section-card {
   background: var(--bg-card);
@@ -95,10 +87,9 @@ body {
   margin-bottom: 1.5rem;
   color: var(--accent);
 }
-
-/* =============================================
+/* ===============================
    LISTS - OBJECTIVES - ADVANTAGES/DISADVANTAGES
-================================================ */
+================================ */
 ul {
   padding-left: 1.2rem;
 }
@@ -107,10 +98,6 @@ li {
   margin-bottom: 0.7rem;
   color: var(--text-soft);
 }
-
-/* ===============================
-   OBJECTIVES
-================================ */
 .objectives-list li {
   list-style: none;
   position: relative;
@@ -136,7 +123,7 @@ li {
 }
 
 /* ===============================
-   SECOND SECTION
+   GENERAL ANALYSIS
 ================================ */
 .split-section {
   display: grid;
@@ -144,38 +131,27 @@ li {
   gap: 2.5rem;
   align-items: center;
 }
-
 .text-block p {
   margin-bottom: 1.1rem;
   color: var(--text-soft);
 }
-
-/* .analysis {
-  max-width: 1100px;
-  margin: auto;
-  padding: 3rem 2rem;
-} */
-
 .analysis-text {
   max-width: 100%;
   line-height: 1.7;
   font-size: 1.05rem;
   color: #dcdcdc;
 }
-
 .analysis-figure {
   margin: 3rem auto;
   max-width: 900px;
   text-align: center;
 }
-
 .analysis-figure img {
   width: 100%;
   border-radius: 14px;
   opacity: 0.9;
   box-shadow: 0 0 40px rgba(0,255,180,0.15);
 }
-
 .analysis-figure figcaption {
   margin-top: 0.8rem;
   font-size: 0.85rem;
@@ -189,7 +165,7 @@ li {
 }
 
 /* ===============================
-   HIGHLIGHT BOX
+   DOMESTIC NETWORK HIGHLIGHT
 ================================ */
 .highlight-box {
   background: rgba(0, 255, 180, 0.08);
@@ -199,19 +175,14 @@ li {
   font-style: italic;
   color: var(--text-main);
 }
-
 /* ===============================
-   GRID 2 COLUMNS
+  ADVANTAGES / DISADVANTAGES
 ================================ */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
-
-/* ===============================
-   SUB TITLES
-================================ */
 .sub-title {
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -226,14 +197,13 @@ li {
 }
 
 /* ===============================
-   NETWORK MODES
+   NETWORK CONFIGURATION MODES
 ================================ */
 .network-modes li {
   margin-bottom: 0.9rem;
 }
-
 /* ===============================
-   CIERRE
+   CLOSING
 ================================ */
 .conclusion {
   text-align: center;
@@ -243,7 +213,6 @@ li {
     rgba(0, 255, 180, 0.02)
   );
 }
-
 /* ===============================
     FOOTER
 ================================ */
